@@ -1,0 +1,17 @@
+15:04:50 **** Incremental Build of configuration Debug for project CAN Driver ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/CAN_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F411CEUx -DSTM32F446xx -c -I../Inc -I"D:/Notes/Embedded Sys/STM32Cube_FW_F4_V1.28.0/Drivers/CMSIS/Include" -I"D:/Notes/Embedded Sys/STM32Cube_FW_F4_V1.28.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/CAN_driver.d" -MT"Src/CAN_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/CAN_driver.o"
+../Src/CAN_driver.c: In function 'can_get_rx_message':
+../Src/CAN_driver.c:163:19: error: 'CAN_RX_FIFO0' undeclared (first use in this function)
+  163 |     if (RxFifo == CAN_RX_FIFO0) /* Rx element is assigned to Rx FIFO 0 */
+      |                   ^~~~~~~~~~~~
+../Src/CAN_driver.c:163:19: note: each undeclared identifier is reported only once for each function it appears in
+../Src/CAN_driver.c:195:14: error: 'can_rx_header_typedef' has no member named 'timestamp'; did you mean 'timedstamp'?
+  195 |     pHeader->timestamp = (CAN_RDT0R_TIME & CAN1->sFIFOMailBox[RxFifo].RDTR) >> CAN_RDT0R_TIME_Pos;
+      |              ^~~~~~~~~
+      |              timedstamp
+make: *** [Src/subdir.mk:28: Src/CAN_driver.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+
+15:04:50 Build Failed. 3 errors, 0 warnings. (took 490ms)
+

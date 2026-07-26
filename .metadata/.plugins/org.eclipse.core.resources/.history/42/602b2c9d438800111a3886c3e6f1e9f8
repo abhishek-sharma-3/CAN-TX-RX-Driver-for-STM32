@@ -1,0 +1,57 @@
+#include "CAN_driver.h"
+
+
+
+#define GPIOBEN  (1U<<1)
+
+void can_gpio_init(void){
+	//enable clock access to gpiob
+	RCC->AHB1ENR |= GPIOBEN;
+
+	//set PB8 an PB9 to AF
+
+	GPIOB->MODER &=~(1U<<16);
+	GPIOB->MODER |=(1U<<17);
+
+	GPIOB->MODER &=~(1U<<18);
+	GPIOB->MODER |=(1U<<19);
+
+
+	//Select set PB8 & PB9 Alternate function type to CAN1 RX and TX
+	GPIOB->AFR[1] |=(1U<<4);
+	GPIOB->AFR[1] &=~(1U<<5);
+	GPIOB->AFR[1] &=~(1U<<6);
+	GPIOB->AFR[1] |=(1U<<7);
+	//Enable CANRX0 interrupt
+	NVIC_EnableIRQ(CAN1_RX0_IRQn);
+
+
+}
+void can_params_init(uint8_t mode){
+
+	//enable clock access to can1
+	RCC->APB1ENR |=(1U<<0);
+
+	//enter initialization mode
+	CAN1->MCR |=CAN_MCR_INRQ;
+
+	//wait until can1 is in initialization mode
+	while((CAN1->MSR & CAN_MSR_INAK)==0){}
+	//exit the sleep mode
+	CAN1->MCR &=~CAN_MCR_SLEEP;
+
+	//wait until can1 is out of sleep mode
+	while((CAN1->MSR & CAN_MSR_SLAK)!=0){}
+
+	//config. timing parameters including baud rate by configuring time segment1&2 and prescaler
+	CAN1->BTR = (1<< CAN_BTR_TS1_Pos) | (0<< CAN_BTR_TS1_Pos) | (9<< CAN_BTR_BRP_Pos );
+	//select MODE
+	if (mode){
+		//normal mode
+		CAN1->BTR &=~(1U<<30);
+	}
+	else{
+		CAN->BTR |=(1U<<30);
+	}
+
+}

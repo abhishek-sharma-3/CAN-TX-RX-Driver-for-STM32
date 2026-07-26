@@ -1,0 +1,29 @@
+#include "CAN_driver.h"
+
+
+
+#define GPIOBEN  (1U<<1)
+
+void can_gpio_init(void){
+	//enable clock access to gpiob
+	RCC->AHB1ENR |= GPIOBEN;
+
+	//set PB8 an PB9 to AF
+
+	GPIOB->MODER &=~(1U<<16);
+	GPIOB->MODER |=(1U<<17);
+
+	GPIOB->MODER &=~(1U<<18);
+	GPIOB->MODER |=(1U<<19);
+
+
+	//Select set PB8 & PB9 Alternate function type to CAN1 RX and TX
+	GPIOB->AFR[1] |=(1U<<4);
+	GPIOB->AFR[1] &=~(1U<<5);
+	GPIOB->AFR[1] &=~(1U<<6);
+	GPIOB->AFR[1] |=(1U<<7);
+	//Enable CANRX0 interrupt
+	NVIC_EnableIRQ(CAN1_RX0_IRQn);
+
+
+}

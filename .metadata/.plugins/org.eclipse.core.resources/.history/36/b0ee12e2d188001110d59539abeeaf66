@@ -1,0 +1,23 @@
+#ifndef CAN_DRIVER_H_
+#define CAN_DRIVER_H_
+#include "STM32F4xx.h"
+
+typedef struct
+{
+	uint32_t std_id;
+	uint32_t ext_id;
+	uint32_t ide;
+	uint32_t rtr;
+	uint32_t dlc;
+}can_tx_header_typdef;
+typedef struct
+{
+	uint32_t std_id;
+	uint32_t ext_id;
+	uint32_t ide;
+	uint32_t rtr;
+	uint32_t dlc;
+	uint32_t timedstamp;
+	uint32_t filter_match_index;
+}can_rx_header_typdef;
+#endif

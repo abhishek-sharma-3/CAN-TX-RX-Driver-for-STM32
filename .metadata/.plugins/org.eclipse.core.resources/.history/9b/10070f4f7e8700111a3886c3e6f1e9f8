@@ -1,0 +1,15 @@
+#include "CAN_driver.h"
+
+
+
+#define GPIOBEN  (1U<<1)
+
+void can_gpio_init(void){
+	//enable clock access to gpiob
+	RCC->AHB1ENR |=
+	//set PB8 an PB9 to AF
+	//Select set PB8 & PB9 Alternate function type to CAN1 RX and TX
+	//Enable CANRX0 interrupt
+
+
+}
