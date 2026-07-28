@@ -1,4 +1,4 @@
-21:54:11 **** Incremental Build of configuration Debug for project CAN Driver ****
+21:47:36 **** Incremental Build of configuration Debug for project CAN Driver ****
 make -j8 all 
 arm-none-eabi-size  CAN\ Driver.elf 
    text	   data	    bss	    dec	    hex	filename
@@ -6,5 +6,5 @@ arm-none-eabi-size  CAN\ Driver.elf
 Finished building: default.size.stdout
  
 
-21:54:11 Build Finished. 0 errors, 0 warnings. (took 334ms)
+21:47:36 Build Finished. 0 errors, 0 warnings. (took 297ms)
 

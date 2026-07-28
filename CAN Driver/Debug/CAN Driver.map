@@ -85,12 +85,14 @@ Discarded input sections
                 0x00000000      0x160 ./Src/CAN_driver.o
  .text.can_get_rx_message
                 0x00000000      0x1c0 ./Src/CAN_driver.o
- .debug_info    0x00000000      0xb54 ./Src/CAN_driver.o
- .debug_abbrev  0x00000000      0x209 ./Src/CAN_driver.o
+ .text.can_filter_config
+                0x00000000       0xc0 ./Src/CAN_driver.o
+ .debug_info    0x00000000      0xb8d ./Src/CAN_driver.o
+ .debug_abbrev  0x00000000      0x20b ./Src/CAN_driver.o
  .debug_aranges
-                0x00000000       0x48 ./Src/CAN_driver.o
+                0x00000000       0x50 ./Src/CAN_driver.o
  .debug_rnglists
-                0x00000000       0x35 ./Src/CAN_driver.o
+                0x00000000       0x3c ./Src/CAN_driver.o
  .debug_macro   0x00000000       0xe3 ./Src/CAN_driver.o
  .debug_macro   0x00000000      0xae4 ./Src/CAN_driver.o
  .debug_macro   0x00000000       0x28 ./Src/CAN_driver.o
@@ -109,10 +111,10 @@ Discarded input sections
  .debug_macro   0x00000000    0x16749 ./Src/CAN_driver.o
  .debug_macro   0x00000000       0x6d ./Src/CAN_driver.o
  .debug_macro   0x00000000       0x28 ./Src/CAN_driver.o
- .debug_line    0x00000000      0x81b ./Src/CAN_driver.o
- .debug_str     0x00000000    0x8b9dc ./Src/CAN_driver.o
+ .debug_line    0x00000000      0x87e ./Src/CAN_driver.o
+ .debug_str     0x00000000    0x8ba02 ./Src/CAN_driver.o
  .comment       0x00000000       0x44 ./Src/CAN_driver.o
- .debug_frame   0x00000000       0xd8 ./Src/CAN_driver.o
+ .debug_frame   0x00000000       0xfc ./Src/CAN_driver.o
  .ARM.attributes
                 0x00000000       0x34 ./Src/CAN_driver.o
  .group         0x00000000        0xc ./Src/main.o

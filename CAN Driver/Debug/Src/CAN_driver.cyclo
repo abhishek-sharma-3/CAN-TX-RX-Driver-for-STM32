@@ -4,3 +4,4 @@ D:/Notes/Embedded Sys/STM32Cube_FW_F4_V1.28.0/Drivers/CMSIS/Include/core_cm4.h:1
 ../Src/CAN_driver.c:59:6:can_start	2
 ../Src/CAN_driver.c:80:9:can_add_tx_message	7
 ../Src/CAN_driver.c:159:9:can_get_rx_message	6
+../Src/CAN_driver.c:227:6:can_filter_config	1

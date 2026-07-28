@@ -227,7 +227,7 @@ uint8_t can_get_rx_message(uint32_t RxFifo, can_rx_header_typedef *pHeader, uint
 void can_filter_config(uint16_t std_id){
 
 	//set the filter to initialization mode
-	CAN1->FMR |= CAN_FMR_FINIT;
+	CAN1->FMR |= CAN_FNR_FINIT;
 
 	//set the slave filter to start frame 20
 
@@ -258,7 +258,7 @@ void can_filter_config(uint16_t std_id){
 	//Activate filter 18
 	CAN1->FA1R |=(CAN_FFA1R_FFA18);
 	//clear filter initialization mode
-	CAN1->FMR &=~ CAN_FMR_FINIT;
+	CAN1->FMR &=~ CAN_FNR_FINIT;
 
 
 }
