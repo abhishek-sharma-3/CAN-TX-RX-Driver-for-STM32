@@ -33,19 +33,4 @@ typedef struct
 #define CAN_RX_FIFO0	0x00
 #define CAN_RX_FIFO1	0x01
 
-void can_gpio_init(void);
-void can_params_init(uint8_t mode);
-void can_start(void);
-uint8_t can_add_tx_message(can_tx_header_typedef *pHeader, uint8_t aData[], uint32_t *pTxMailbox);
-uint8_t can_get_rx_message(uint32_t RxFifo, can_rx_header_typedef *pHeader, uint8_t aData[]);
-void can_filter_config(uint16_t std_id);
-
-
-
-
-
-
-
-
-
 #endif
