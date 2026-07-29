@@ -166,3 +166,15 @@ COM7
 
 !ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-07-26 14:22:08.405
 !MESSAGE port: COM7
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-29 22:45:37.358
+!MESSAGE Indexed 'CAN_loopback' (7 sources, 62 headers) in 2.85 sec: 3,015 declarations; 5,180 references; 3 unresolved inclusions; 30 syntax errors; 755 unresolved names (8.4%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-29 22:52:04.072
+!MESSAGE Indexed '1_f44_CAN_driver' (3 sources, 53 headers) in 1.09 sec: 1,954 declarations; 2,867 references; 0 unresolved inclusions; 2 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-29 22:54:51.583
+!MESSAGE Indexed '1_f44_CAN_driver' (4 sources, 55 headers) in 0.835 sec: 2,019 declarations; 3,023 references; 0 unresolved inclusions; 3 syntax errors; 258 unresolved names (4.9%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-29 22:59:27.449
+!MESSAGE Indexed '2_f44_CAN_loopback' (4 sources, 61 headers) in 1.15 sec: 2,906 declarations; 4,443 references; 3 unresolved inclusions; 30 syntax errors; 753 unresolved names (9.3%)
